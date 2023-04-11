@@ -1,0 +1,23 @@
+<title>RPG Shak</title>
+<script src="main.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<h1>RPG com Shaks</h1>
+<p id="textAB">Atributo Básico</p>
+<input type="number" min="1" id="attributeBase">
+
+<p id="textAP">Porcentagem usada do atributo</p>
+<input type="number" min="1" id="attributePercentage">
+
+<p id="textAD">Dano Adicional</p>
+<input type="number" min="1" id="additionalDamage">
+
+<p>Ataque Duplo?</p>
+<input type="checkbox" id="doubleAttack">
+
+<p>Foi crítico?</p>
+<input type="checkbox" id="isCritical">
+
+<p></p>
+<input type="button" value="Calcular o dano" onclick="Damage()">
+<p id="damage"></p>
