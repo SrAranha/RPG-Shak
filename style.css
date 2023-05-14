@@ -1,4 +1,10 @@
 body {
     background-color: darkgrey;
     text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+input {
+    width: 440;
+    height: 30;
 }
