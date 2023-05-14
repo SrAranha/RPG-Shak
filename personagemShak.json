@@ -1,0 +1,23 @@
+{
+    "nome": "Shinzui Onu",
+    "nivel": 7,
+    "atributos": {
+        "tenacidade": 3,
+        "maestria": 8,
+        "velocidade": 8,
+        "energia": 1,
+        "eficiencia": 7
+    },
+    "HP": {
+        "total": 51,
+        "atual": 51,
+        "temporario": 0
+    },
+    "SP": {
+        "total": 43,
+        "atual": 43,
+        "temporario": 0
+    },
+    "dinheiro": 20,
+    "pontosDeAula": 3
+}
