@@ -2,7 +2,7 @@ function Damage() {
     ResetPs();
     const attributeBase = document.getElementById("attributeBase").value;
     const attributePercentage = document.getElementById("attributePercentage").value;
-    let additionalDamage = document.getElementById("additionalDamage").value;
+    const additionalDamage = document.getElementById("additionalDamage").value;
     const doubleAttack = document.getElementById("doubleAttack");
     const isCritical = document.getElementById("isCritical");
 
@@ -20,19 +20,17 @@ function Damage() {
         let totalDamage;
         totalDamage = attributeBase * percentage;
 
-        if (additionalDamage) {
-            totalDamage = totalDamage + +additionalDamage;
-        }
+        if (additionalDamage) { totalDamage = totalDamage + +additionalDamage; }
     
-        if (doubleAttack.checked) {
-            totalDamage *= 2;
-        }
-        if (isCritical.checked) {
-            totalDamage *= 2;
-        }
+        if (doubleAttack.checked) { totalDamage *= 2; }
+
+        if (isCritical.checked) { totalDamage *= 2; }
+
+        if (totalDamage < 1) { totalDamage = 1 }
         
+        console.log(totalDamage);
         const damageHTML = document.getElementById("damage");
-        damageHTML.innerText = totalDamage;
+        damageHTML.innerText = Math.round(totalDamage);
     }    
 }
 

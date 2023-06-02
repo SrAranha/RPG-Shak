@@ -5,10 +5,13 @@ body {
     font-weight: bold;
 }
 input {
-    width: 440;
-    height: 35;
+    width: 440px;
+    height: 35px;
     font-size: 1em;
 }
 #button {
-    height: 45;
+    height: 45px;
+}
+#mindmg {
+font-size: 23px;
 }
