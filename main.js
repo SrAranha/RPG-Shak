@@ -3,8 +3,9 @@ function Damage() {
     const attributeBase = document.getElementById("attributeBase").value;
     const attributePercentage = document.getElementById("attributePercentage").value;
     const additionalDamage = document.getElementById("additionalDamage").value;
-    const doubleAttack = document.getElementById("doubleAttack");
+    const doubleAttack = document.getElementById("doubleAttack").value;
     const isCritical = document.getElementById("isCritical");
+    const damageHTML = document.getElementById("damage");
 
     if (!attributeBase) {
         const textAB = document.getElementById("textAB");
@@ -18,19 +19,28 @@ function Damage() {
     {
         let percentage = attributePercentage / 100;
         let totalDamage;
+        let attacks = [];
+
         totalDamage = attributeBase * percentage;
-
-        if (additionalDamage) { totalDamage = totalDamage + +additionalDamage; }
-    
-        if (doubleAttack.checked) { totalDamage *= 2; }
-
-        if (isCritical.checked) { totalDamage *= 2; }
-
+        
         if (totalDamage < 1) { totalDamage = 1 }
         
-        console.log(totalDamage);
-        const damageHTML = document.getElementById("damage");
-        damageHTML.innerText = Math.round(totalDamage);
+        if (isCritical.checked) { totalDamage *= 2; }
+        
+        if (additionalDamage) { totalDamage = totalDamage + +additionalDamage; }
+
+        totalDamage = Math.round(totalDamage);
+
+        if (doubleAttack == 1) { damageHTML.innerText = totalDamage }
+        
+        else if (doubleAttack != 1)
+        {
+            for (let i = 0; i < doubleAttack; i++) {
+                attacks.push(totalDamage);
+            }
+            totalDamage *= doubleAttack;
+            damageHTML.innerText = attacks + " = " + totalDamage;
+        }
     }    
 }
 
